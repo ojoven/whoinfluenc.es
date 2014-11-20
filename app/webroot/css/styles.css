@@ -1,0 +1,393 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  /* HTML5 display-role reset for older browsers */
+}
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol, ul {
+  list-style: none;
+}
+blockquote, q {
+  quotes: none;
+}
+blockquote:before, blockquote:after, q:before, q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+.yellow {
+  /* Old browsers */
+  background: #ff8;
+}
+.facebook-gradient {
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #3a589a), color-stop(1, #2b4274));
+  background-image: -o-linear-gradient(bottom, #3a589a 0%, #2b4274 100%);
+  background-image: -moz-linear-gradient(bottom, #3a589a 0%, #2b4274 100%);
+  background-image: -webkit-linear-gradient(bottom, #3a589a 0%, #2b4274 100%);
+  background-image: -ms-linear-gradient(bottom, #3a589a 0%, #2b4274 100%);
+  background-image: linear-gradient(to bottom, #3a589a 0%, #2b4274 100%);
+}
+.twitter-gradient {
+  /* fallback color */
+  background-color: #0081ce;
+  background: -moz-linear-gradient(top, #00aced, #0081ce);
+  background: -ms-linear-gradient(top, #00aced, #0081ce);
+  background: -webkit-linear-gradient(top, #00aced, #0081ce);
+}
+.twitter-gradient-hover {
+  /* fallback color */
+  background-color: #0060ac;
+  background: -moz-linear-gradient(top, #0081ce, #0060ac);
+  background: -ms-linear-gradient(top, #0081ce, #0060ac);
+  background: -webkit-linear-gradient(top, #0081ce, #0060ac);
+}
+.red-gradient {
+  background-color: ;
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #e63d46), color-stop(1, #c11a22));
+  background-image: -o-linear-gradient(bottom, #e63d46 0%, #c11a22 100%);
+  background-image: -moz-linear-gradient(bottom, #e63d46 0%, #c11a22 100%);
+  background-image: -webkit-linear-gradient(bottom, #e63d46 0%, #c11a22 100%);
+  background-image: -ms-linear-gradient(bottom, #e63d46 0%, #c11a22 100%);
+  background-image: linear-gradient(to bottom, #e63d46 0%, #c11a22 100%);
+}
+.white-gradient {
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #eee), color-stop(1, #fff));
+  background-image: -o-linear-gradient(bottom, #eee 0%, #fff 100%);
+  background-image: -moz-linear-gradient(bottom, #eee 0%, #fff 100%);
+  background-image: -webkit-linear-gradient(bottom, #eee 0%, #fff 100%);
+  background-image: -ms-linear-gradient(bottom, #eee 0%, #fff 100%);
+  background-image: linear-gradient(to bottom, #eee 0%, #fff 100%);
+}
+.font-family-yanone, body {
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+}
+.border-box-sizing, input[type="text"], #settings .settings-option .supra-option, .btn.main, .influencer .header, footer {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.fit-content {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+.clear {
+  display: block;
+  clear: both;
+}
+body {
+  text-align: center;
+  padding: 30px 20px 90px;
+  background: #fff;
+}
+.highlight a {
+  color: #888;
+}
+.highlight a:hover {
+  color: #00688b;
+}
+h1#logo {
+  margin: 30px;
+}
+h1#logo a {
+  font-size: 50px;
+  color: #00688b;
+  text-decoration: none;
+}
+h2 {
+  font-size: 24px;
+  color: #888;
+  font-style: italic;
+  font-weight: 300;
+  max-width: 530px;
+  margin: 0 auto;
+}
+h2 .highlight {
+  font-weight: 400;
+}
+#logout {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  color: #ddd;
+  text-decoration: none;
+  text-align: center;
+}
+#logout img {
+  width: 24px;
+  display: block;
+  margin: 0 auto;
+}
+.form-container {
+  width: 300px;
+  margin: 40px auto 0;
+  position: relative;
+}
+.form-container .disabler {
+  display: none;
+  background: rgba(255, 255, 255, 0.6);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 300px;
+  height: 100%;
+  z-index: 999999;
+}
+input[type="text"] {
+  padding: 20px;
+  width: 100%;
+  font-size: 20px;
+  border-top: 1px solid #ddd;
+  border-right: 1px solid #ddd;
+  border-left: 1px solid #ddd;
+  border-bottom: none;
+  text-align: center;
+  margin: 10px auto 0;
+  display: block;
+  font-weight: 300;
+  -webkit-appearance: none;
+  border-radius: 0;
+}
+.settings-icon {
+  left: 0;
+  padding: 6px;
+  position: absolute;
+  top: 64px;
+  width: 24px;
+  z-index: 999;
+  cursor: pointer;
+}
+#to-settings {
+  z-index: 9999;
+  border: 2px solid transparent;
+  border-right: 2px solid #0060ac;
+}
+#to-settings:hover, #to-settings .active {
+  background: #0060ac;
+}
+#settings {
+  display: none;
+  border-top: 2px solid #fff;
+}
+#settings .settings-option.optimization {
+  border-top: 2px solid #fff;
+}
+#settings .settings-option .supra-option {
+  cursor: pointer;
+  width: 50%;
+  float: left;
+  height: 80px;
+  padding: 10px;
+  background: #eee;
+}
+#settings .settings-option .supra-option .info {
+  font-size: 14px;
+  color: #666;
+}
+#settings .settings-option .supra-option:hover {
+  background: #ddd;
+}
+#settings .settings-option .supra-option.active {
+  background: #0081ce;
+  cursor: default;
+}
+#settings .settings-option .supra-option.active .info {
+  color: #fff;
+}
+#settings .settings-option .option {
+  display: block;
+  font-size: 18px;
+}
+.btn.main {
+  display: block;
+  width: 100%;
+  background: #0081ce;
+  border: none;
+  cursor: pointer;
+  padding: 10px 15px;
+  font-size: 20px;
+}
+#progress {
+  display: none;
+  height: 50px;
+  max-width: 1024px;
+  margin: 30px auto;
+  height: 89px;
+}
+#progress-render {
+  width: 300px;
+  margin: 15px auto;
+}
+#progress-bar {
+  /* Chrome 1-25, Safari 3.2+ */
+  -webkit-transition: width 0.5s ease-in-out;
+  /* Firefox 4-15 */
+  -moz-transition: width 0.5s ease-in-out;
+  /* Opera 10.50–12.00 */
+  -o-transition: width 0.5s ease-in-out;
+  /* Chrome 26, Firefox 16+, IE 10+, Opera 12.10+ */
+  transition: width 0.5s ease-in-out;
+  background: #00688b;
+  width: 0;
+  height: 2px;
+  margin: 0;
+  float: left;
+}
+#progress-message {
+  display: block;
+  padding: 15px 0;
+  width: 300px;
+  color: #999;
+}
+#progress-message.progress {
+  background: #b4cdcd;
+  color: #212021;
+}
+#progress-message.error {
+  background: #ff7256;
+  color: #212021;
+}
+#progress-message.success {
+  background: #93db70;
+  cursor: pointer;
+  color: #212021;
+}
+#progress-message.success:hover {
+  background: #71b950;
+}
+.influencers {
+  max-width: 1024px;
+  margin: 0 auto;
+}
+.influencer {
+  margin: 20px;
+  float: left;
+  text-align: center;
+  width: 200px;
+}
+.influencer .header {
+  padding: 10px;
+  width: 100%;
+  background: #fff;
+}
+.influencer .header .supra-title {
+  display: block;
+  font-size: 14px;
+  color: #999;
+}
+.influencer .header .title {
+  display: block;
+  margin: 5px;
+  font-size: 20px;
+  letter-spacing: 1px;
+}
+.influencer .body {
+  height: 200px;
+  overflow: hidden;
+}
+.influencer .body span.image {
+  cursor: pointer;
+  width: 200px;
+  height: 200px;
+  background-size: cover;
+  display: block;
+}
+.influencer .footer .btn {
+  padding: 10px 0;
+  font-size: 20px;
+  display: block;
+}
+.btn {
+  cursor: pointer;
+  color: #fff;
+  background: #0081ce;
+}
+.btn:hover {
+  background: #0060ac;
+}
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px;
+  border-top: 1px solid #eee;
+  background: #00688b;
+  color: #fff;
+}
+footer a {
+  color: #fff;
+}
+.break-desktop {
+  display: block;
+  height: 0;
+}
+.hide-desktop {
+  display: none;
+}
+.hide-mobile {
+  display: inline;
+}
+@media screen and (max-width: 600px) {
+  #logout {
+    top: 5px;
+    right: 5px;
+  }
+  #logout img {
+    width: 20px;
+  }
+  #logout span {
+    font-size: 12px;
+  }
+  .hide-desktop {
+    display: inline;
+  }
+  .hide-mobile {
+    display: none;
+  }
+  .break-desktop {
+    display: inline;
+  }
+  body {
+    padding: 0px 20px 60px;
+  }
+  h1#logo {
+    margin: 20px;
+  }
+  h1#logo a {
+    font-size: 35px;
+  }
+  h2 {
+    font-size: 15px;
+  }
+  .form-container {
+    margin: 20px auto 0;
+    width: 260px;
+  }
+  #progress-render {
+    width: 260px;
+  }
+  #progress-message {
+    width: 260px;
+  }
+  .influencer {
+    float: none;
+    margin: 20px auto;
+  }
+}
