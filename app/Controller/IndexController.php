@@ -185,6 +185,10 @@ class IndexController extends AppController {
 
 	}
 
+	public function checklistusers() {
+		$this->TwitterList->checkListUsers();
+	}
+
 	/**
 	public function defaultinfluencers() {
 

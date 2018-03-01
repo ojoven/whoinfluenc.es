@@ -4,14 +4,18 @@ App::uses('Functions','Lib');
 
 class TwitterList extends AppModel {
 
-	const NUM_TRIES_COMPLETE = 4;
+	// const NUM_TRIES_COMPLETE = 4;
+	// When this project was first done there seemed to be a problem with Twitter API
+	// that didn't add all the users to a list so we had to do some additional tries.
+	// Twitter API seems to be working OK now so no additional tries, just one.
+	const NUM_TRIES_COMPLETE = 1;
 	const NUM_TRIES_QUICK = 1;
 
 	public $numTries;
 	public $totalSteps = 0;
 	public $credentials;
 
-	const NUM_MAX_USERS_LIST = 1000;
+	const NUM_MAX_USERS_LIST = 5000;
 
 	public function updateDefaultImages() {
 
@@ -130,7 +134,7 @@ class TwitterList extends AppModel {
 						shuffle($chunk);
 
 						$params['list_id'] = $listId;
-						$params['user_id'] = implode(",",$chunk);;
+						$params['user_id'] = implode(",",$chunk);
 						$result = $connection->post('lists/members/create_all', $params);
 
 					}
@@ -253,6 +257,46 @@ class TwitterList extends AppModel {
 		echo "<script>update_progress(".$partial.",".$this->totalSteps.",'".$message."','".$type."','".$url."')</script>".str_repeat(" ",1000);
 		ob_flush();
 		flush();
+	}
+
+	/** PLAYGROUND **/
+	public function checkListUsers() {
+
+		// We're using this user's list because of the high amount of following users she has
+		$username = 'lainde';
+		$slugList = 'whoinfluences-lainde';
+
+		$userId = Configure::read('Twitter.defaultUserId');
+
+		$connection = $this->getConnection($userId,true);
+
+		// Get list members
+		$query = $connection->get('lists/members', array('slug' => $slugList, 'owner_screen_name' => 'ojoven', 'count' => 5000, 'include_entities' => false, 'skip_status' => true));
+		$users = $query->users;
+		$memberIds = array();
+		foreach ($users as $user) {
+			$memberIds[] = $user->id;
+		}
+
+		// Get following users
+		$query = $connection->get('friends/ids', array('screen_name' => $username));
+		$followingIds = $query->ids;
+
+		// To be added
+		$toBeAdded = array_diff($followingIds, $memberIds);
+		$params['slug'] = $slugList;
+		$params['owner_screen_name'] = 'ojoven';
+		$params['user_id'] = implode(",",$toBeAdded);
+		$result = $connection->post('lists/members/create_all', $params);
+
+		// To be deleted
+		$toBeDeleted = array_diff($memberIds, $followingIds);
+
+		$params['slug'] = $slugList;
+		$params['owner_screen_name'] = 'ojoven';
+		$params['user_id'] = implode(",",$toBeDeleted);
+		$result = $connection->post('lists/members/destroy_all', $params);
+
 	}
 
 }

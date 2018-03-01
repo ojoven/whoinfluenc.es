@@ -112,7 +112,7 @@ CakeLog::config('error', array(
 /** Let's set the APP_ENV **/
 if (isset($_SERVER['SERVER_NAME'])) {
 	switch($_SERVER['SERVER_NAME']) {
-		case 'localhost':
+		case 'whoinfluences.local.host':
 			$appEnv = "development"; break;
 		case 'theinfluencer.ojoven.es':
 			$appEnv = "staging"; break;
